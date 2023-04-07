@@ -4,6 +4,8 @@
     {
         bool CanMove();
         void ChangeDirection();
+        void FollowTarget();
+        bool HasTargetInRange();
         void Move();
     }
 }

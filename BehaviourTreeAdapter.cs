@@ -6,6 +6,8 @@ namespace BehaviourTrees
     {
         private Func<bool> _canMove;
         private Action _changeDirection;
+        private Action _followTarget;
+        private Func<bool> _hasTargetInRange;
         private Action _move;
 
         public Func<bool> CanMove
@@ -31,6 +33,16 @@ namespace BehaviourTrees
         void IBehaviourTreeAdapter.ChangeDirection()
         {
             _changeDirection();
+        }
+
+        public void FollowTarget()
+        {
+            _followTarget();
+        }
+
+        public bool HasTargetInRange()
+        {
+            return _hasTargetInRange();
         }
 
         void IBehaviourTreeAdapter.Move()
