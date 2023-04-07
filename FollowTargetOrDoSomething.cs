@@ -18,11 +18,11 @@ namespace BehaviourTrees
             if (_adapter.HasTargetInRange())
             {
                 _adapter.FollowTarget();
+                return;
             }
-            else
-            {
-                step.Invoke();                
-            }
+
+            _adapter.FindTargetInRange();
+            step.Invoke();
         }
     }
 }

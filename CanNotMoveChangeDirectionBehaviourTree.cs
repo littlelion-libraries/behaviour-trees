@@ -13,15 +13,13 @@ namespace BehaviourTrees
 
         public void Step()
         {
-            if (!_adapter.CanMove())
-            {
-                _adapter.ChangeDirection();
-            }
-
             if (_adapter.CanMove())
             {
                 _adapter.Move();
+                return;
             }
+
+            _adapter.ChangeDirection();
         }
     }
 }
