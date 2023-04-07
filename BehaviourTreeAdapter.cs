@@ -20,6 +20,16 @@ namespace BehaviourTrees
             set => _changeDirection = value;
         }
 
+        public Action FollowTarget
+        {
+            set => _followTarget = value;
+        }
+
+        public Func<bool> HasTargetInRange
+        {
+            set => _hasTargetInRange = value;
+        }
+
         public Action Move
         {
             set => _move = value;
@@ -35,12 +45,12 @@ namespace BehaviourTrees
             _changeDirection();
         }
 
-        public void FollowTarget()
+        void IBehaviourTreeAdapter.FollowTarget()
         {
             _followTarget();
         }
 
-        public bool HasTargetInRange()
+        bool IBehaviourTreeAdapter.HasTargetInRange()
         {
             return _hasTargetInRange();
         }
