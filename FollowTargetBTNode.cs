@@ -1,11 +1,7 @@
-using UnityEngine;
-using UnityEngine.Events;
-
 namespace BehaviourTrees
 {
-    public class FollowTargetOrDoSomething : MonoBehaviour, IBehaviourTree
+    public class FollowTargetBTNode : IBTNode
     {
-        [SerializeField] private UnityEvent step;
         private IBehaviourTreeAdapter _adapter;
 
         public IBehaviourTreeAdapter Adapter
@@ -13,16 +9,16 @@ namespace BehaviourTrees
             set => _adapter = value;
         }
 
-        public void Step()
+        public bool Step()
         {
             if (_adapter.HasTargetInRange())
             {
                 _adapter.FollowTarget();
-                return;
+                return true;
             }
 
             _adapter.FindTargetInRange();
-            step.Invoke();
+            return false;
         }
     }
 }

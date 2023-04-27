@@ -1,10 +1,14 @@
 {
-    "name": "BehaviourTrees",
+    "name": "BehaviourTrees.Unity.Editors",
     "rootNamespace": "",
     "references": [
+        "GUID:a2907b41172b94637b27693fbf475bdb",
+        "GUID:4a55408793aaf674abce4d5a677093fd",
         "GUID:56b30b9a3b53a7d40b51b04e9e367179"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

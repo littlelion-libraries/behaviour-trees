@@ -1,8 +1,8 @@
 ﻿namespace BehaviourTrees
 {
-    public interface IBehaviourTree
+    public interface IBTNode
     {
         IBehaviourTreeAdapter Adapter { set; }
-        void Step();
+        bool Step();
     }
 }
