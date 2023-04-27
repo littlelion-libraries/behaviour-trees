@@ -1,17 +1,26 @@
+using System;
+using CSharpBoosts;
+
 namespace BehaviourTrees
 {
     public class ChangeDirectionBTNode : IBTNode
     {
-        private IBehaviourTreeAdapter _adapter;
+        // private IBehaviourTreeAdapter _adapter;
+        //
+        // public IBehaviourTreeAdapter Adapter
+        // {
+        //     set => _adapter = value;
+        // }
+        private Action _changeDirection;
 
-        public IBehaviourTreeAdapter Adapter
+        public IDynamicObject Object
         {
-            set => _adapter = value;
+            set => _changeDirection = value.ChangeDirection();
         }
 
         public bool Step()
         {
-            _adapter.ChangeDirection();
+            _changeDirection();
             return true;
         }
     }

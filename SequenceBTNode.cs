@@ -1,16 +1,29 @@
+using CSharpBoosts;
+
 namespace BehaviourTrees
 {
     public class SequenceBTNode : IBTNode
     {
         private IBTNode[] _nodes;
 
-        public IBehaviourTreeAdapter Adapter
+        // public IBehaviourTreeAdapter Adapter
+        // {
+        //     set
+        //     {
+        //         foreach (var node in _nodes)
+        //         {
+        //             node.Adapter = value;
+        //         }
+        //     }
+        // }
+
+        public IDynamicObject Object
         {
             set
             {
                 foreach (var node in _nodes)
                 {
-                    node.Adapter = value;
+                    node.Object = value;
                 }
             }
         }

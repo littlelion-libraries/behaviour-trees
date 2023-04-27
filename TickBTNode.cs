@@ -1,4 +1,5 @@
 using System;
+using CSharpBoosts;
 
 namespace BehaviourTrees
 {
@@ -6,10 +7,10 @@ namespace BehaviourTrees
     {
         private IBTNode _impl;
 
-        public IBehaviourTreeAdapter Adapter
-        {
-            set => _impl.Adapter = value;
-        }
+        // public IBehaviourTreeAdapter Adapter
+        // {
+        //     set => _impl.Adapter = value;
+        // }
 
         public bool Expanded { get; set; }
 
@@ -20,6 +21,11 @@ namespace BehaviourTrees
         }
 
         public int Tick { get; private set; }
+
+        public IDynamicObject Object
+        {
+            set => _impl.Object = value;
+        }
 
         public bool Step()
         {

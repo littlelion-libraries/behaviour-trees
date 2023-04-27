@@ -1,8 +1,11 @@
-﻿namespace BehaviourTrees
+﻿using CSharpBoosts;
+
+namespace BehaviourTrees
 {
     public interface IBTNode
     {
-        IBehaviourTreeAdapter Adapter { set; }
+        // IBehaviourTreeAdapter Adapter { set; }
+        IDynamicObject Object { set; }
         bool Step();
     }
 }
