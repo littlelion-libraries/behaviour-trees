@@ -1,4 +1,4 @@
-namespace BehaviourTrees
+namespace BehaviourTrees.Customs
 {
     public static class ObjectMethod
     {

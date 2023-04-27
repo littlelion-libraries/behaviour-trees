@@ -12,8 +12,11 @@ namespace BehaviourTrees.Unity
 
         private void Awake()
         {
-            var node = JsonConvert.DeserializeObject<JsonBehaviourTreeNode>(text);
-            _node = Application.isEditor ? TickBtNodeUtils.Create(node) : BehaviourTreeUtils.Create(node);
+            _node = BehaviourTreeUtils.Create(JsonConvert.DeserializeObject<JsonBehaviourTreeNode>(text));
+            if (Application.isEditor)
+            {
+                _node = TickBtNodeUtils.Add(_node);
+            }
         }
 
         public bool Step()
